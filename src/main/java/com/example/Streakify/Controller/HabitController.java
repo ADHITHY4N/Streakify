@@ -39,7 +39,7 @@ public class HabitController {
         if(deleted){
             return ResponseEntity.ok("Habit deleted successfully");
 
-        }return ResponseEntity.status(404).body("Habit ot found");
+        }return ResponseEntity.status(404).body("Habit not found");
 
     }
 

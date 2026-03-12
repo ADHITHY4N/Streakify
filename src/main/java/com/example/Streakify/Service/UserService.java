@@ -21,9 +21,9 @@ public class UserService {
         user.setName(dto.getName().trim());
         user.setEmail(email);
 
-//        if(!email.contains("@")){
-//            throw new RuntimeException("Invalid email");
-//        }
+        if(!email.contains("@")){
+            throw new RuntimeException("Invalid email");
+        }
         if(ur.existsByEmail(email)){
             throw new RuntimeException("Email already exist");
 

@@ -30,9 +30,9 @@ public class UserController {
     public String deleteAccount(@PathVariable Long id){
         boolean deleted = us.deleteAccount(id);
         if(deleted){
-            return "user with id"+id+"deleted successfully";
+            return "user with id "+id+" deleted successfully";
         }else{
-            return "user with id"+id+"not found";
+            return "user with id "+id+" not found";
         }
     }
 

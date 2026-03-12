@@ -4,6 +4,7 @@ import com.example.Streakify.Dto.HabitLogRequestDto;
 import com.example.Streakify.Dto.HabitLogResponseDto;
 import com.example.Streakify.Model.Habit_log;
 import com.example.Streakify.Service.HabitLogService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -18,7 +19,7 @@ public class HabitLogController {
     }
     @PostMapping("/habit/{habit_id}/log")
     public HabitLogResponseDto createLog(@PathVariable long habit_id,
-                                         @RequestBody HabitLogRequestDto dto){
+                                         @Valid @RequestBody HabitLogRequestDto dto){
         return habitLogService.createLog(habit_id,dto);
 
     }
@@ -28,11 +29,11 @@ public class HabitLogController {
     }
 
     @PutMapping("/habit/{habit_id}/{logDate}")
-    public HabitLogResponseDto updateLog(@PathVariable long habit_id, @PathVariable LocalDate logDate, @RequestBody HabitLogRequestDto dto){
+    public HabitLogResponseDto updateLog(@PathVariable long habit_id, @PathVariable LocalDate logDate,@Valid @RequestBody HabitLogRequestDto dto){
         return habitLogService.updateLog(habit_id,logDate,dto);
     }
     @GetMapping("/habit/{habit_id}/weekly-status")
-    public String weeklyStatus(@PathVariable("id") long habit_id){
+    public String weeklyStatus(@PathVariable long habit_id){
         return habitLogService.getWeeklyStatus(habit_id);
     }
 
