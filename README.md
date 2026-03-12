@@ -57,6 +57,7 @@ Architecture
 
 The application follows a layered architecture commonly used in enterprise Spring Boot applications.
 
+```
 Client Request
       │
       ▼
@@ -70,6 +71,8 @@ Repository Layer
       │
       ▼
    Database
+   ```
+
 
 
 Layer Responsibilities
@@ -88,6 +91,7 @@ Entity Layer
 
 
 Project Structure
+```
 Streakify
 │
 ├── controller
@@ -111,6 +115,8 @@ Streakify
 ├── dto
 │    
 └── StreakifyApplication
+```
+
 
 
 Database Design
@@ -219,8 +225,9 @@ JWT Authentication
 *Habit reminder notifications
 *Analytics dashboard UI
 
-Author
 
+Author
+------
 Adhithyan S
 
 LinkedIn
